@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index2.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press Start 2P">
+</head>
+    <body>
+
+
+ 
+    <h1 id="try">Your Guess</h1>
+
+
+    <div class="container">
+            <div class="bar" id="bar"></div>
+     </div>
+
+
+    <input class="number" id="number">
+    </input>
+
+
+    <div class="guess" id="guess">
+        GUESS!!
+    </div>
+
+    <div class="lives">
+        <h4>Remaining Tries</h4>
+        <h4 id="lft">5</h4>
+    </div>
+  
+
+     
+
+    <script>
+       
+     //  alert("Hulaan mo yung number, hint 1-99 yung range");
+
+       const min = 1;
+       const max = 99;
+       const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+       const trial = document.getElementById("try");
+       const lft = document.getElementById("lft");
+       
+
+
+       const div = document.getElementById("bar");
+       const input = document.getElementById("number");
+
+       var i = 0;
+       var win = 0;
+       var left  = 5;
+
+       //i = 5;
+            //document.getElementById("guess").disabled = true;
+           // document.getElementById("guess").style.backgroundColor = "gray";
+
+
+
+
+        document.getElementById("guess").addEventListener("click", function(){
+
+
+                if(i<4){
+
+
+               const inputValue = input.value;
+               var w = inputValue  + "%";
+               if(inputValue>100){ w = "100%" }
+               bar.style.width  = `${w}`;
+  
+               if(inputValue<randomNumber && i!=5 ){
+               bar.style.backgroundColor = "#00ffccf9";
+               trial.innerHTML = "too short";
+        
+               }
+               else if(inputValue>randomNumber){
+               bar.style.backgroundColor = "#00ffccf9";
+               trial.innerHTML = "too high";
+               }
+              else if(inputValue==randomNumber){
+              bar.style.backgroundColor = "#00ffccf9";
+              trial.innerHTML = "youu guessed it right!!!";
+              alert("may utak ka naman pala");
+              location.reload();
+              }
+              else{
+                alert("sabing number lang iinput");
+              }
+
+
+            
+
+
+             
+              
+            
+            }
+
+            else{
+                alert("wala  kang mararartig sa buhay");
+                location.reload();
+            }
+
+
+            i++;
+            left--;
+            lft.innerHTML = `${left}`;
+                 
+      
+           
+        
+
+           
+
+
+    
+
+        });
+    </script>
+
+
+</body>
+</html>

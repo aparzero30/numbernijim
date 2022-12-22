@@ -1,0 +1,56 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5VH;
+    overflow: hidden;
+    font-family: "Press Start 2P";
+    background-color: black;
+    color: #00ffccf9;;
+ 
+}
+
+.number{
+    font-size: 3vw;
+    width: 10vw;
+    background-color: aqua;
+    padding: 1vw;
+    text-align: center;
+    font-family: "Press Start 2P";
+    color: #00ffccf9;;
+    background-color: black;
+    border-color: white;
+}
+
+.guess{
+    background-color: #00ffccf9;
+    color: #000;
+    height: 3vw;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  
+    
+}
+
+.container{
+    height: 10vh;
+    width: 50vw;
+    background-color: gray;
+    text-align: center;
+}
+.bar{
+    height: 100%;
+    width: 0;
+    background-color: #00ffccf9;
+    transition: 1s;
+}
+
+h4{
+    text-align: center;
+}

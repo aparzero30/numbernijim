@@ -22,7 +22,7 @@ body{
     font-family: "Press Start 2P";
     color: #00ffccf9;;
     background-color: black;
-    border-color: white;
+    border-color: #00ffccf9;
 }
 
 .guess{
@@ -41,8 +41,10 @@ body{
 .container{
     height: 10vh;
     width: 50vw;
-    background-color: gray;
+    background-color: black;
     text-align: center;
+    border-color: #00ffccf9;
+    border-style: solid;
 }
 .bar{
     height: 100%;

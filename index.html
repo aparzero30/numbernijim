@@ -21,7 +21,7 @@
      </div>
 
 
-    <input class="number" id="number">
+    <input class="number" id="number" value="1">
     </input>
 
 
@@ -66,29 +66,47 @@
         document.getElementById("guess").addEventListener("click", function(){
 
 
-                if(i<4){
+                if(i<5){
 
 
                const inputValue = input.value;
                var w = inputValue  + "%";
                if(inputValue>100){ w = "100%" }
                bar.style.width  = `${w}`;
-  
-               if(inputValue<randomNumber && i!=5 ){
+
+          
+
+               var diff = randomNumber - inputValue;
+               console.log(diff);
+       
+
+
+               if(diff<=10 && i!=5 && diff>0){           
                bar.style.backgroundColor = "#00ffccf9";
-               trial.innerHTML = "too short";
-        
+               trial.innerHTML = "little short"; 
                }
-               else if(inputValue>randomNumber){
+               
+               else if ( diff>10 && i!=5){
                bar.style.backgroundColor = "#00ffccf9";
-               trial.innerHTML = "too high";
+               trial.innerHTML = "too low";
                }
-              else if(inputValue==randomNumber){
-              bar.style.backgroundColor = "#00ffccf9";
-              trial.innerHTML = "youu guessed it right!!!";
-              alert("may utak ka naman pala");
-              location.reload();
-              }
+
+               else if ( diff>=-10 && i!=5 && diff<0){
+               bar.style.backgroundColor = "#00ffccf9";
+               trial.innerHTML = "little high";
+               }       
+               else if ( diff<-10 && i!=5 && diff<0 ){
+               bar.style.backgroundColor = "#00ffccf9";
+               trial.innerHTML = "too  high";
+               }
+
+               else if ( diff==0 ){
+               bar.style.backgroundColor = "#00ffccf9";
+               alert(randomNumber);
+               alert("may utak ka naman pala");
+               location.reload();
+               }
+
               else{
                 alert("sabing number lang iinput");
               }
@@ -103,6 +121,7 @@
             }
 
             else{
+                alert(randomNumber);
                 alert("wala  kang mararartig sa buhay");
                 location.reload();
             }
